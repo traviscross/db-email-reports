@@ -69,6 +69,7 @@ EOF
 run_report () {
   psql -qn "$database" <<EOF
 \unset HISTFILE
+\set ON_ERROR_STOP on
 create or replace function pg_temp.run_report()
     returns table(
       field1 text,
